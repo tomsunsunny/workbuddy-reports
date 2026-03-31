@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>午间新闻简报 - 2026年3月31日</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(100, 116, 139, 0.3);
+        }
+
+        .date {
+            font-size: 18px;
+            color: #94a3b8;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #60a5fa, #3b82f6, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-top: 10px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .news-card {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: rgba(96, 165, 250, 0.3);
+        }
+
+        .category-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tech-tag { background: linear-gradient(90deg, #0ea5e9, #3b82f6); color: white; }
+        .finance-tag { background: linear-gradient(90deg, #10b981, #059669); color: white; }
+        .ai-tag { background: linear-gradient(90deg, #8b5cf6, #7c3aed); color: white; }
+        .society-tag { background: linear-gradient(90deg, #f59e0b, #d97706); color: white; }
+        .international-tag { background: linear-gradient(90deg, #ef4444, #dc2626); color: white; }
+
+        .news-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+            line-height: 1.4;
+        }
+
+        .news-content {
+            font-size: 16px;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .news-source {
+            display: inline-block;
+            margin-top: 16px;
+            font-size: 14px;
+            color: #94a3b8;
+            padding: 4px 12px;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 6px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(100, 116, 139, 0.3);
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        .footer-signature {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="date">📅 2026年3月31日 · 星期二</div>
+            <h1 class="title">午间新闻简报</h1>
+            <div class="subtitle">今日要闻速览 · 信息决定高度</div>
+        </div>
+
+        <div class="news-grid">
+            <!-- 科技新闻 -->
+            <div class="news-card">
+                <span class="category-tag tech-tag">【科技】</span>
+                <h3 class="news-title">宁波银行发布"财资大管家2026版暨鲲鹏司库3.0"</h3>
+                <div class="news-content">
+                    宁波银行成功举办"打破边界，共赴新程"主题发布会，吸引数千家企业线上线下共聚，推出全新财资服务解决方案，标志着金融科技在财资管理领域实现新突破。
+                </div>
+                <span class="news-source">来源：新浪科技热点小时报</span>
+            </div>
+
+            <!-- AI前沿 -->
+            <div class="news-card">
+                <span class="category-tag ai-tag">【AI前沿】</span>
+                <h3 class="news-title">微软推出"多模协作"深度研究智能体</h3>
+                <div class="news-content">
+                    美国科技巨头微软推出深度研究智能体，GPT与Claude并肩协作，xAI公司正在推进人工智能助手Grok的研发，马斯克持续关注AI领域发展。
+                </div>
+                <span class="news-source">来源：新浪机器学习热点小时报</span>
+            </div>
+
+            <!-- 财经新闻 -->
+            <div class="news-card">
+                <span class="category-tag finance-tag">【财经】</span>
+                <h3 class="news-title">中国3月PMI数据今日发布，全球财经关注</h3>
+                <div class="news-content">
+                    今日上午9:30，中国3月PMI数据正式发布，成为全球财经领域核心焦点，多项产业政策调整同步落地，国际地缘政治动态持续影响市场走向。
+                </div>
+                <span class="news-source">来源：雪球财经要闻</span>
+            </div>
+
+            <!-- AI前沿 -->
+            <div class="news-card">
+                <span class="category-tag ai-tag">【AI前沿】</span>
+                <h3 class="news-title">中国AI Token调用量历史性超越美国</h3>
+                <div class="news-content">
+                    2026年3月末中国日均Token调用量突破140万亿，首次超越美国，OpenClaw发布3.22史诗级更新，底层架构全面换血，技术架构实现重大突破。
+                </div>
+                <span class="news-source">来源：CSDN前沿解析</span>
+            </div>
+
+            <!-- 国际新闻 -->
+            <div class="news-card">
+                <span class="category-tag international-tag">【国际】</span>
+                <h3 class="news-title">中东局势持续升温，国际能源市场波动</h3>
+                <div class="news-content">
+                    特朗普再度威胁摧毁伊朗能源设施，伊朗将对霍尔木兹海峡收费，美油近四年来首次收于100美元上方，鲍威尔鸽派发言重燃降息预期。
+                </div>
+                <span class="news-source">来源：金十数据全球财经早餐</span>
+            </div>
+
+            <!-- 社会新闻 -->
+            <div class="news-card">
+                <span class="category-tag society-tag">【社会】</span>
+                <h3 class="news-title">世界冠军周昊东在宁波举行婚礼</h3>
+                <div class="news-content">
+                    宁波籍羽毛球世界冠军周昊东在家乡宁波举行婚礼，与妻子刘思琪步入婚姻殿堂，多位世界冠军到场祝福，结束十年异地恋。
+                </div>
+                <span class="news-source">来源：今日头条</span>
+            </div>
+
+            <!-- 财经新闻 -->
+            <div class="news-card">
+                <span class="category-tag finance-tag">【财经】</span>
+                <h3 class="news-title">华安基金暂停旗下石油指数基金赎回</h3>
+                <div class="news-content">
+                    华安基金公告，公司旗下华安标普全球石油指数(LOF)自2026年4月3日起暂停赎回业务，原因为4月3日为美国公众假日。
+                </div>
+                <span class="news-source">来源：同花顺金融早报</span>
+            </div>
+
+            <!-- 科技新闻 -->
+            <div class="news-card">
+                <span class="category-tag tech-tag">【科技】</span>
+                <h3 class="news-title">我国人工智能开源社区建设取得显著进展</h3>
+                <div class="news-content">
+                    近年来我国AI开源生态体系形成规模化发展态势，成为全球AI开源格局中的重要一极，从代码共享转向全链条创新。
+                </div>
+                <span class="news-source">来源：腾讯新闻</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-signature">以上是今日早间要闻，祝工作顺利</div>
+            <div style="margin-top: 15px; color: #64748b; font-size: 14px;">
+                新闻简报生成时间：2026年3月31日 09:20 · 来源自动抓取与整理
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.news-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // 自动更新时间显示
+            const updateTime = () => {
+                const now = new Date();
+                const timeString = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+                const timeElement = document.querySelector('.footer div');
+                if (timeElement) {
+                    timeElement.textContent = `新闻简报生成时间：2026年3月31日 ${timeString} · 来源自动抓取与整理`;
+                }
+            };
+            
+            // 每分钟更新一次时间
+            setInterval(updateTime, 60000);
+        });
+    </script>
+</body>
+</html>
