@@ -1,281 +1,362 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>午间新闻简报 - 2026年3月31日</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>早间新闻简报 · 2026年4月1日</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: #e2e8f0;
-            min-height: 100vh;
-            padding: 20px;
-            line-height: 1.6;
-        }
+    body {
+      font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f172a 100%);
+      min-height: 100vh;
+      color: #e2e8f0;
+      padding: 32px 20px;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
 
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid rgba(100, 116, 139, 0.3);
-        }
+    /* 顶部标题区 */
+    .header {
+      text-align: center;
+      padding: 36px 0 28px;
+      border-bottom: 1px solid rgba(99, 179, 237, 0.2);
+      margin-bottom: 32px;
+      position: relative;
+    }
+    .header::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #06b6d4);
+      margin: 18px auto 0;
+      border-radius: 2px;
+    }
+    .broadcast-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #f87171;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .broadcast-dot {
+      width: 7px;
+      height: 7px;
+      background: #ef4444;
+      border-radius: 50%;
+      animation: blink 1.2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+    .header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      background: linear-gradient(135deg, #60a5fa, #34d399, #60a5fa);
+      background-size: 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .header-sub {
+      margin-top: 10px;
+      color: #94a3b8;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+    .header-date {
+      margin-top: 6px;
+      color: #64748b;
+      font-size: 13px;
+    }
 
-        .date {
-            font-size: 18px;
-            color: #94a3b8;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
+    /* 新闻卡片 */
+    .news-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
 
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            background: linear-gradient(90deg, #60a5fa, #3b82f6, #7c3aed);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin: 10px 0;
-        }
+    .news-card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(71, 85, 105, 0.4);
+      border-radius: 12px;
+      padding: 18px 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(8px);
+      position: relative;
+      overflow: hidden;
+    }
+    .news-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      border-radius: 0 2px 2px 0;
+    }
+    .news-card:hover {
+      border-color: rgba(99, 179, 237, 0.4);
+      background: rgba(30, 41, 59, 0.9);
+      transform: translateX(3px);
+    }
 
-        .subtitle {
-            font-size: 18px;
-            color: #cbd5e1;
-            margin-top: 10px;
-        }
+    /* 分类颜色 */
+    .cat-ai   { background: linear-gradient(180deg, #8b5cf6, #7c3aed); }
+    .cat-tech { background: linear-gradient(180deg, #3b82f6, #2563eb); }
+    .cat-finance { background: linear-gradient(180deg, #10b981, #059669); }
+    .cat-social  { background: linear-gradient(180deg, #f59e0b, #d97706); }
+    .cat-intl    { background: linear-gradient(180deg, #ef4444, #dc2626); }
 
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
-        }
+    .news-card.ai-card::before    { background: linear-gradient(180deg, #8b5cf6, #7c3aed); }
+    .news-card.tech-card::before  { background: linear-gradient(180deg, #3b82f6, #2563eb); }
+    .news-card.fin-card::before   { background: linear-gradient(180deg, #10b981, #059669); }
+    .news-card.soc-card::before   { background: linear-gradient(180deg, #f59e0b, #d97706); }
+    .news-card.intl-card::before  { background: linear-gradient(180deg, #ef4444, #dc2626); }
 
-        .news-card {
-            background: rgba(30, 41, 59, 0.8);
-            border-radius: 12px;
-            padding: 24px;
-            border: 1px solid rgba(100, 116, 139, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
+    .tag {
+      flex-shrink: 0;
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #fff;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+    .tag-ai      { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+    .tag-tech    { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+    .tag-finance { background: linear-gradient(135deg, #10b981, #059669); }
+    .tag-social  { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .tag-intl    { background: linear-gradient(135deg, #ef4444, #dc2626); }
 
-        .news-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            border-color: rgba(96, 165, 250, 0.3);
-        }
+    .news-content {
+      flex: 1;
+    }
+    .news-title {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: #e2e8f0;
+      line-height: 1.5;
+      margin-bottom: 5px;
+    }
+    .news-summary {
+      font-size: 13.5px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
 
-        .category-tag {
-            display: inline-block;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+    /* 分隔线 */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0 6px;
+      color: #475569;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(71,85,105,0.5), transparent);
+    }
 
-        .tech-tag { background: linear-gradient(90deg, #0ea5e9, #3b82f6); color: white; }
-        .finance-tag { background: linear-gradient(90deg, #10b981, #059669); color: white; }
-        .ai-tag { background: linear-gradient(90deg, #8b5cf6, #7c3aed); color: white; }
-        .society-tag { background: linear-gradient(90deg, #f59e0b, #d97706); color: white; }
-        .international-tag { background: linear-gradient(90deg, #ef4444, #dc2626); color: white; }
+    /* 底部 */
+    .footer {
+      margin-top: 36px;
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid rgba(71, 85, 105, 0.3);
+      color: #475569;
+      font-size: 13px;
+      letter-spacing: 1px;
+      line-height: 1.8;
+    }
+    .footer-sign {
+      color: #60a5fa;
+      font-weight: 600;
+    }
 
-        .news-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #f1f5f9;
-            line-height: 1.4;
-        }
-
-        .news-content {
-            font-size: 16px;
-            color: #cbd5e1;
-            line-height: 1.6;
-        }
-
-        .news-source {
-            display: inline-block;
-            margin-top: 16px;
-            font-size: 14px;
-            color: #94a3b8;
-            padding: 4px 12px;
-            background: rgba(15, 23, 42, 0.6);
-            border-radius: 6px;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
-            border-top: 1px solid rgba(100, 116, 139, 0.3);
-            color: #94a3b8;
-            font-size: 16px;
-        }
-
-        .footer-signature {
-            font-size: 18px;
-            color: #cbd5e1;
-            margin-top: 10px;
-            font-weight: 500;
-        }
-
-        @media (max-width: 768px) {
-            .news-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 15px;
-            }
-            
-            .title {
-                font-size: 28px;
-            }
-        }
-    </style>
+    /* 统计栏 */
+    .stats-bar {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .stat-chip {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(71,85,105,0.4);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 12px;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .stat-chip .icon { font-size: 15px; }
+    .stat-chip strong { color: #e2e8f0; font-size: 14px; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="date">📅 2026年3月31日 · 星期二</div>
-            <h1 class="title">午间新闻简报</h1>
-            <div class="subtitle">今日要闻速览 · 信息决定高度</div>
-        </div>
+<div class="container">
 
-        <div class="news-grid">
-            <!-- 科技新闻 -->
-            <div class="news-card">
-                <span class="category-tag tech-tag">【科技】</span>
-                <h3 class="news-title">宁波银行发布"财资大管家2026版暨鲲鹏司库3.0"</h3>
-                <div class="news-content">
-                    宁波银行成功举办"打破边界，共赴新程"主题发布会，吸引数千家企业线上线下共聚，推出全新财资服务解决方案，标志着金融科技在财资管理领域实现新突破。
-                </div>
-                <span class="news-source">来源：新浪科技热点小时报</span>
-            </div>
+  <!-- 头部 -->
+  <div class="header">
+    <div class="broadcast-badge">
+      <span class="broadcast-dot"></span> LIVE · 早间新闻简报
+    </div>
+    <h1>今日要闻</h1>
+    <div class="header-sub">MORNING BRIEFING</div>
+    <div class="header-date">2026年4月1日（星期三）· 09:50 播报</div>
+  </div>
 
-            <!-- AI前沿 -->
-            <div class="news-card">
-                <span class="category-tag ai-tag">【AI前沿】</span>
-                <h3 class="news-title">微软推出"多模协作"深度研究智能体</h3>
-                <div class="news-content">
-                    美国科技巨头微软推出深度研究智能体，GPT与Claude并肩协作，xAI公司正在推进人工智能助手Grok的研发，马斯克持续关注AI领域发展。
-                </div>
-                <span class="news-source">来源：新浪机器学习热点小时报</span>
-            </div>
+  <!-- 统计栏 -->
+  <div class="stats-bar">
+    <div class="stat-chip"><span class="icon">🤖</span> AI前沿 <strong>2</strong> 条</div>
+    <div class="stat-chip"><span class="icon">💻</span> 科技 <strong>2</strong> 条</div>
+    <div class="stat-chip"><span class="icon">📈</span> 财经 <strong>2</strong> 条</div>
+    <div class="stat-chip"><span class="icon">🌏</span> 国际 <strong>2</strong> 条</div>
+    <div class="stat-chip"><span class="icon">🏡</span> 社会 <strong>2</strong> 条</div>
+  </div>
 
-            <!-- 财经新闻 -->
-            <div class="news-card">
-                <span class="category-tag finance-tag">【财经】</span>
-                <h3 class="news-title">中国3月PMI数据今日发布，全球财经关注</h3>
-                <div class="news-content">
-                    今日上午9:30，中国3月PMI数据正式发布，成为全球财经领域核心焦点，多项产业政策调整同步落地，国际地缘政治动态持续影响市场走向。
-                </div>
-                <span class="news-source">来源：雪球财经要闻</span>
-            </div>
+  <!-- 新闻卡片列表 -->
+  <div class="news-grid">
 
-            <!-- AI前沿 -->
-            <div class="news-card">
-                <span class="category-tag ai-tag">【AI前沿】</span>
-                <h3 class="news-title">中国AI Token调用量历史性超越美国</h3>
-                <div class="news-content">
-                    2026年3月末中国日均Token调用量突破140万亿，首次超越美国，OpenClaw发布3.22史诗级更新，底层架构全面换血，技术架构实现重大突破。
-                </div>
-                <span class="news-source">来源：CSDN前沿解析</span>
-            </div>
+    <!-- AI前沿 -->
+    <div class="section-divider">─── AI 前沿 ───</div>
 
-            <!-- 国际新闻 -->
-            <div class="news-card">
-                <span class="category-tag international-tag">【国际】</span>
-                <h3 class="news-title">中东局势持续升温，国际能源市场波动</h3>
-                <div class="news-content">
-                    特朗普再度威胁摧毁伊朗能源设施，伊朗将对霍尔木兹海峡收费，美油近四年来首次收于100美元上方，鲍威尔鸽派发言重燃降息预期。
-                </div>
-                <span class="news-source">来源：金十数据全球财经早餐</span>
-            </div>
-
-            <!-- 社会新闻 -->
-            <div class="news-card">
-                <span class="category-tag society-tag">【社会】</span>
-                <h3 class="news-title">世界冠军周昊东在宁波举行婚礼</h3>
-                <div class="news-content">
-                    宁波籍羽毛球世界冠军周昊东在家乡宁波举行婚礼，与妻子刘思琪步入婚姻殿堂，多位世界冠军到场祝福，结束十年异地恋。
-                </div>
-                <span class="news-source">来源：今日头条</span>
-            </div>
-
-            <!-- 财经新闻 -->
-            <div class="news-card">
-                <span class="category-tag finance-tag">【财经】</span>
-                <h3 class="news-title">华安基金暂停旗下石油指数基金赎回</h3>
-                <div class="news-content">
-                    华安基金公告，公司旗下华安标普全球石油指数(LOF)自2026年4月3日起暂停赎回业务，原因为4月3日为美国公众假日。
-                </div>
-                <span class="news-source">来源：同花顺金融早报</span>
-            </div>
-
-            <!-- 科技新闻 -->
-            <div class="news-card">
-                <span class="category-tag tech-tag">【科技】</span>
-                <h3 class="news-title">我国人工智能开源社区建设取得显著进展</h3>
-                <div class="news-content">
-                    近年来我国AI开源生态体系形成规模化发展态势，成为全球AI开源格局中的重要一极，从代码共享转向全链条创新。
-                </div>
-                <span class="news-source">来源：腾讯新闻</span>
-            </div>
-        </div>
-
-        <div class="footer">
-            <div class="footer-signature">以上是今日早间要闻，祝工作顺利</div>
-            <div style="margin-top: 15px; color: #64748b; font-size: 14px;">
-                新闻简报生成时间：2026年3月31日 09:20 · 来源自动抓取与整理
-            </div>
-        </div>
+    <div class="news-card ai-card">
+      <span class="tag tag-ai">AI前沿</span>
+      <div class="news-content">
+        <div class="news-title">Anthropic Claude Code源代码泄露，Python开源移植版迅速走红</div>
+        <div class="news-summary">Claude Code完整源代码意外泄露，开发者随即在GitHub发布功能完整的Python重实现版本，短时间内跻身GitHub增长最快仓库之列，AI开发工具开源化讨论再度升温。</div>
+      </div>
     </div>
 
-    <script>
-        // 简单的交互效果
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.news-card');
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 100 * index);
-            });
-            
-            // 自动更新时间显示
-            const updateTime = () => {
-                const now = new Date();
-                const timeString = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
-                const timeElement = document.querySelector('.footer div');
-                if (timeElement) {
-                    timeElement.textContent = `新闻简报生成时间：2026年3月31日 ${timeString} · 来源自动抓取与整理`;
-                }
-            };
-            
-            // 每分钟更新一次时间
-            setInterval(updateTime, 60000);
-        });
-    </script>
+    <div class="news-card ai-card">
+      <span class="tag tag-ai">AI前沿</span>
+      <div class="news-content">
+        <div class="news-title">苹果iOS 27将携重磅升级版Siri，前谷歌高管主导AI营销</div>
+        <div class="news-summary">苹果已聘请前谷歌购物与助理产品副总裁莉莲·林肯负责AI营销，新版Siri搭载更强大的生成式AI能力，预计随iOS 27一同亮相，被视为苹果AI战略的关键反击。</div>
+      </div>
+    </div>
+
+    <!-- 科技 -->
+    <div class="section-divider">─── 科技 ───</div>
+
+    <div class="news-card tech-card">
+      <span class="tag tag-tech">科技</span>
+      <div class="news-content">
+        <div class="news-title">工信部九部门联合印发物联网产业方案，2028年目标破3.5万亿</div>
+        <div class="news-summary">工业和信息化部等九部门联合发布《推动物联网产业创新发展行动方案（2026—2028年）》，明确到2028年物联网核心产业规模突破3.5万亿元，重点布局工业互联网、智慧城市等领域。</div>
+      </div>
+    </div>
+
+    <div class="news-card tech-card">
+      <span class="tag tag-tech">科技</span>
+      <div class="news-content">
+        <div class="news-title">全国新能源汽车动力电池溯源信息平台正式上线运行</div>
+        <div class="news-summary">我国首个覆盖全生命周期的动力电池溯源信息平台正式运行，可追溯从生产、使用到回收的完整链路，为电池梯次利用和报废回收提供数据基础。</div>
+      </div>
+    </div>
+
+    <!-- 财经 -->
+    <div class="section-divider">─── 财经 ───</div>
+
+    <div class="news-card fin-card">
+      <span class="tag tag-finance">财经</span>
+      <div class="news-content">
+        <div class="news-title">A股市场4月开局震荡，上证指数伊朗局势下承压波动</div>
+        <div class="news-summary">受伊朗与美以军事冲突持续发酵影响，全球金融市场情绪谨慎，A股4月首个交易日小幅震荡整理，市场静待局势明朗化，能源板块因国际油价高企走势相对强势。</div>
+      </div>
+    </div>
+
+    <div class="news-card fin-card">
+      <span class="tag tag-finance">财经</span>
+      <div class="news-content">
+        <div class="news-title">商务部对美发起两项贸易壁垒调查，证监会公布法治建设安排</div>
+        <div class="news-summary">商务部近日就美方贸易限制措施启动两项贸易壁垒正式调查；证监会同步公布2026年法治政府建设具体安排，持续强化资本市场监管框架。</div>
+      </div>
+    </div>
+
+    <!-- 国际 -->
+    <div class="section-divider">─── 国际 ───</div>
+
+    <div class="news-card intl-card">
+      <span class="tag tag-intl">国际</span>
+      <div class="news-content">
+        <div class="news-title">伊朗导弹打击美军指挥中心，中东局势骤然升级</div>
+        <div class="news-summary">伊朗今日使用精确制导导弹袭击美军指挥中心，美军方报告348名士兵受伤，美国向中东增派第三艘航母。中方随即呼吁各方立即停火止战，强调停火刻不容缓。</div>
+      </div>
+    </div>
+
+    <div class="news-card intl-card">
+      <span class="tag tag-intl">国际</span>
+      <div class="news-content">
+        <div class="news-title">伊朗宣布全国学校4月5日起改为线上教学，霍尔木兹海峡管控方案通过</div>
+        <div class="news-summary">伊朗政府宣布4月5日起全国学校转为线上课程以应对安全威胁；同日，伊朗议会国家安全委员会正式通过霍尔木兹海峡管理方案，或将对国际能源运输产生深远影响。</div>
+      </div>
+    </div>
+
+    <!-- 社会 -->
+    <div class="section-divider">─── 社会 ───</div>
+
+    <div class="news-card soc-card">
+      <span class="tag tag-social">社会</span>
+      <div class="news-content">
+        <div class="news-title">4月起一批新规正式施行，涵盖信用修复、未成年人保护等多领域</div>
+        <div class="news-summary">进入4月，一批关系民生的新规正式落地：信用修复机制更加完善，未成年人网络保护标准提升，医疗机构管理规范强化，消费者维权渠道进一步畅通，多项政策将直接改变大众日常生活。</div>
+      </div>
+    </div>
+
+    <div class="news-card soc-card">
+      <span class="tag tag-social">社会</span>
+      <div class="news-content">
+        <div class="news-title">公安部公布网络谣言打击典型案例，玉米自主选育品种覆盖率达94%</div>
+        <div class="news-summary">公安部公布3起编造"拐卖儿童"等网络谣言的典型案例，强化依法治网力度；农业领域传喜讯，我国玉米自主选育品种比例达94%，"中国粮用中国种"目标加速落地。</div>
+      </div>
+    </div>
+
+  </div><!-- /news-grid -->
+
+  <!-- 底部 -->
+  <div class="footer">
+    <div>以上是今日早间要闻，祝工作顺利。</div>
+    <div style="margin-top:8px; font-size:12px;">
+      <span class="footer-sign">📺 早间新闻简报</span> &nbsp;·&nbsp; 2026年4月1日 · 每日 08:33 准时播报 &nbsp;·&nbsp; Powered by WorkBuddy
+    </div>
+  </div>
+
+</div>
 </body>
 </html>
